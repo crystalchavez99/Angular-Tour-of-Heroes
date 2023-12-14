@@ -35,3 +35,19 @@ title = 'Tour of Heroes';
 //.html
 <h1>{{title}}</h1>
 ```
+
+### Create component
+* `ng generate component <name>`
+* creates a new directory after name of component and generates three files with a test file
+* You always import the Component symbol from the Angular core library and annotate the component class with `@Component`.
+* `@Component` is a decorator function that specifies the Angular metadata for the component.
+* `ng generate` created three metadata properties:
+  * `selector`: component css element selector
+    * matches the name of the HTML element that identifies this component within a parent component's template
+  * `templateUrl`: location of template file
+  * `styleUrls`: location of css files
+
+### Show Component View
+* To display component, must add to template of the shell app
+* add <app-name> to the AppComponentHTL
+* import component to AppComponentTS and apply to imports property
