@@ -51,3 +51,7 @@ title = 'Tour of Heroes';
 * To display component, must add to template of the shell app
 * add <app-name> to the AppComponentHTL
 * import component to AppComponentTS and apply to imports property
+
+### Create Interface
+* `ng generate interface [name]`
+* Creates a new, generic interface definition in the given project.
