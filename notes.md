@@ -55,3 +55,11 @@ title = 'Tour of Heroes';
 ### Create Interface
 * `ng generate interface [name]`
 * Creates a new, generic interface definition in the given project.
+* To apply towards component make sure its important in the TS file and
+can be used in the class, which will be displayed for use on HTML
+
+#### Formatting with pipes
+* Make you import CommonModules in order to access pipes
+  * uppercase pipe displays value in capital letters
+  * `{{ value_expression | uppercase }}`
+* CommonModule: Exports all the basic Angular directives and pipes, such as NgIf, NgForOf, DecimalPipe, and so on.
