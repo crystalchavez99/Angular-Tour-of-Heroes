@@ -7,9 +7,8 @@ import {
 import {FormsModule} from '@angular/forms';
 
 import {Hero} from '../hero';
-import {HEROES} from '../mock-heroes';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
-
+import { HeroService } from '../hero.service';
 @Component({
   standalone: true,
   selector: 'app-heroes',
@@ -25,10 +24,19 @@ import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 })
 
 export class HeroesComponent {
-  heroes = HEROES;
+  heroes: Hero[] = [];
   selectedHero?: Hero;
-
+  // dentifies it as a HeroService injection site.
+  // heroService parameter to the singleton instance of HeroService.
+  constructor(private heroService: HeroService) {}
+  getHeroes(): void {
+    this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes);
+  }
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
+  }
+  ngOnInit(): void {
+    this.getHeroes();
   }
 }
